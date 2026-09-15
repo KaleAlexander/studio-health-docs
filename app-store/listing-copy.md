@@ -84,6 +84,8 @@ You will land on Home for a demo studio with a program, health, diet, videos, an
 Health data comes from Apple Health if you grant permission. Deny Health access if you prefer; the rest of the app still works.
 
 Clients cannot create accounts in this app. Coaches invite them from the web dashboard at the marketing / studio site. There are no in-app purchases. Studio subscriptions are billed on the web.
+
+Account deletion is in the app: Home → Account → Delete account. That permanently removes the demo login, so recreate the reviewer client if Apple tests it.
 ```
 
 Replace `USERNAME_EMAIL` and `PASSWORD_OTP` with the same values you put in the Sign-in required fields.

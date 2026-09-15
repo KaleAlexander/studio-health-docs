@@ -95,7 +95,7 @@ Publish:
 | Support URL | Required. A live contact or help page, not a 404 |
 | Marketing URL | Optional. The marketing homepage |
 
-Guideline 5.1.1(v) (in-app account deletion) applies when the **app lets users create accounts**. This client app does not; coaches invite people. Still say on the privacy page how a client asks their studio (or Studio Health) to remove their data.
+Guideline 5.1.1(v) (in-app account deletion) applies because clients have accounts. The client app has **Account → Delete account**. That calls the production API and removes the auth user. Do not make reviewers email anyone to delete.
 
 ## 3. Listing collateral
 
@@ -189,6 +189,7 @@ Keep the API, Supabase, and demo studio up until Apple replies. A down backend l
 4. HealthKit with no working fallback when permission is denied.
 5. Placeholder support or privacy URLs.
 6. Screenshots from a logged-out or empty account.
+7. Account deletion missing or only offered by email (guideline 5.1.1(v)).
 
 ## After approval
 
