@@ -51,7 +51,7 @@ First release of the Studio Health client app.
 
 | Field | Value |
 | --- | --- |
-| Support URL | `https://your-marketing-domain/` (or a dedicated support page) |
+| Support URL | `https://your-marketing-domain/clients` |
 | Marketing URL | `https://your-marketing-domain/` |
 | Privacy Policy URL | `https://your-marketing-domain/privacy` |
 | Copyright | `2026 Studio Health` (or the legal entity name) |

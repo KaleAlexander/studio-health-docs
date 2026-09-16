@@ -84,7 +84,7 @@ Say in the notes that Health data comes from Apple Health if granted, and that t
 
 Apple opens the privacy and support URLs. They must be public `https` and match the product.
 
-Update `studio-health-marketing` before submit. Privacy and terms still say clients sign in with a **mobile number**. The app uses **email codes**.
+Update `studio-health-marketing` before submit. Privacy, terms, and the client page should match the live product: **email + 6-digit code**.
 
 Publish:
 
@@ -92,7 +92,7 @@ Publish:
 | --- | --- |
 | `https://your-marketing-domain/privacy` | App Store privacy policy URL (required) |
 | `https://your-marketing-domain/terms` | Link from privacy / support |
-| Support URL | Required. A live contact or help page, not a 404 |
+| `https://your-marketing-domain/clients` | Support URL. App Store / Play links and web sign-in |
 | Marketing URL | Optional. The marketing homepage |
 
 Guideline 5.1.1(v) (in-app account deletion) applies because clients have accounts. The client app has **Account → Delete account**. That calls the production API and removes the auth user. Do not make reviewers email anyone to delete.
