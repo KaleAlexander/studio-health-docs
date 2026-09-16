@@ -57,18 +57,18 @@ First release of the Studio Health client app.
 | Copyright | `2026 Studio Health` (or the legal entity name) |
 | Primary category | Health & Fitness |
 
-## Screenshot captions (optional)
+## Screenshots
 
-If you add captions in Connect or on the images themselves, keep them short:
+Framed iPhone 6.5" PNGs (1284×2778) live in [assets/screenshots/iphone-6.5](assets/screenshots/iphone-6.5). Upload those into the 6.5" slot. A 6.9" set (1320×2868) is in [assets/screenshots/iphone-6.9](assets/screenshots/iphone-6.9) if Connect also asks for it. Upload in this order. Captions are already on the images — do not add them again in Connect.
 
-1. Home — your studio, today’s plan
-2. Today — log the work
-3. Recovery — steps, heart, sleep
-4. Calendar — the week at a glance
-5. Videos — demos from your coach
-6. Book — pick a time
+1. Home — Your studio. Today’s plan.
+2. Today — Log the work as you go.
+3. Calendar — The week at a glance.
+4. Messages — Message your coach anytime.
 
-Do not put the App Store name, price, or device bezels that Apple will reject. Prefer raw device screenshots from TestFlight.
+See [assets/README.md](assets/README.md) before upload: replace the chat-compressed sources with full-res Photos/TestFlight captures, then recapture the same four screens on iPad 13".
+
+Do not put the App Store name, price, or Apple product bezels on the images.
 
 ## App Review notes
 

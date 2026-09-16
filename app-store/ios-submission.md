@@ -103,33 +103,36 @@ Paste-ready copy lives in [listing-copy.md](listing-copy.md).
 
 ### Icon
 
-Export a **1024×1024 PNG** from `studio-health-mobile/assets/images/icon.png`.
+Use [assets/icon-1024.png](assets/icon-1024.png) (exported from `studio-health-mobile/assets/images/icon.png`).
 
 - No transparency / alpha
 - No rounded corners (Apple applies the mask)
 - No text that will clip at small sizes
 
+Horizontal lockups for the marketing site (not an App Store Connect field) are [assets/logo-horizontal-dark.png](assets/logo-horizontal-dark.png) and [assets/logo-horizontal-light.png](assets/logo-horizontal-light.png).
+
 ### Screenshots
 
-1–10 images, JPEG or PNG, no alpha.
+Prepared files and the recapture steps are in [assets/README.md](assets/README.md). 1–10 images, JPEG or PNG, no alpha.
 
 Because the app supports iPhone and iPad, upload both:
 
 | Device | Required sizes (portrait) |
 | --- | --- |
-| iPhone 6.9" (upload first; Apple scales down) | `1320×2868`, `1290×2796`, or `1260×2736` |
-| iPad 13" | See [Apple’s screenshot specs](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/) |
+| iPhone 6.5" (this listing’s current slot) | `1284×2778` — use `assets/screenshots/iphone-6.5/` |
+| iPhone 6.9" (only if Connect shows that slot) | `1320×2868` — use `assets/screenshots/iphone-6.9/` |
+| iPad 13" | Still needed. See [Apple’s screenshot specs](https://developer.apple.com/help/app-store-connect/reference/app-information/screenshot-specifications/) |
 
 Capture from a **production / TestFlight build**, not Expo Go, logged into the demo account so screens are full.
 
-Suggested set (same shots on iPhone and iPad):
+Current iPhone set:
 
 1. Home
 2. Today — program
-3. Today — health / recovery
-4. Calendar
-5. Videos
-6. Booking (if it stays on for review)
+3. Calendar
+4. Messages
+
+Optional extras if those features stay on for review: Health / recovery, Videos, Booking.
 
 App Preview video (15–30s, up to 3) is optional.
 
