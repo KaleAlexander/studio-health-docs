@@ -1,6 +1,6 @@
 # App Store listing copy
 
-Paste into App Store Connect. Replace `your-marketing-domain` and the demo email before submit. This listing is for the **client** app, not the studio owner dashboard.
+Paste into App Store Connect. Replace the demo email and OTP before submit. This listing is for the **client** app, not the studio owner dashboard. If Apple rejected for login / a demo video, use [review-reply.md](review-reply.md) instead of only this page.
 
 ## Name and subtitle
 
@@ -51,9 +51,9 @@ First release of the Studio Health client app.
 
 | Field | Value |
 | --- | --- |
-| Support URL | `https://your-marketing-domain/clients` |
-| Marketing URL | `https://your-marketing-domain/` |
-| Privacy Policy URL | `https://your-marketing-domain/privacy` |
+| Support URL | `https://studiohealth.ai/clients` |
+| Marketing URL | `https://studiohealth.ai/` |
+| Privacy Policy URL | `https://studiohealth.ai/privacy` |
 | Copyright | `2026 Studio Health` (or the legal entity name) |
 | Primary category | Health & Fitness |
 
@@ -70,6 +70,8 @@ Do not put the App Store name, price, or Apple product bezels on the images.
 
 ## App Review notes
 
+The current rejection is Guideline 2.1 Information Needed (new developer account). Paste [review-reply.md](review-reply.md) into **both** Resolution Center and App Review Information → Notes. The short version below is only for later submits once they already have this on file.
+
 ```
 This app uses email + a 6-digit code, not a password.
 
@@ -81,7 +83,7 @@ You will land on Home for a demo studio with a program, health, diet, videos, an
 
 Health data comes from Apple Health if you grant permission. Deny Health access if you prefer; the rest of the app still works.
 
-Clients cannot create accounts in this app. Coaches invite them from the web dashboard at the marketing / studio site. There are no in-app purchases. Studio subscriptions are billed on the web.
+Clients cannot create accounts in this app. Coaches invite them from the web dashboard at https://studiohealth.ai. There are no in-app purchases. Studio subscriptions are billed on the web.
 
 Account deletion is in the app: Home → Account → Delete account. That permanently removes the demo login, so recreate the reviewer client if Apple tests it.
 ```

@@ -75,7 +75,7 @@ In App Store Connect → the iOS version → App Review Information:
 | Sign-in required | On |
 | Username | The demo client email |
 | Password | The fixed OTP, e.g. `246810` |
-| Notes | Paste the template in [listing-copy.md](listing-copy.md#app-review-notes) |
+| Notes | Paste the template in [listing-copy.md](listing-copy.md#app-review-notes). If they rejected and asked for a video, use [review-reply.md](review-reply.md) instead. |
 | Contact | A phone/email you will answer during review |
 
 Say in the notes that Health data comes from Apple Health if granted, and that the rest of the app works if the reviewer denies Health access.
@@ -90,10 +90,10 @@ Publish:
 
 | URL | Use |
 | --- | --- |
-| `https://your-marketing-domain/privacy` | App Store privacy policy URL (required) |
-| `https://your-marketing-domain/terms` | Link from privacy / support |
-| `https://your-marketing-domain/clients` | Support URL. App Store / Play links and web sign-in |
-| Marketing URL | Optional. The marketing homepage |
+| `https://studiohealth.ai/privacy` | App Store privacy policy URL (required) |
+| `https://studiohealth.ai/terms` | Link from privacy / support |
+| `https://studiohealth.ai/clients` | Support URL. App Store / Play links and web sign-in |
+| `https://studiohealth.ai/` | Marketing URL |
 
 Guideline 5.1.1(v) (in-app account deletion) applies because clients have accounts. The client app has **Account → Delete account**. That calls the production API and removes the auth user. Do not make reviewers email anyone to delete.
 
@@ -183,6 +183,10 @@ eas submit --platform ios
 7. Submit that build for App Review.
 
 Keep the API, Supabase, and demo studio up until Apple replies. A down backend looks like a broken app.
+
+## If they reject with Guideline 2.1 Information Needed
+
+New developer accounts often get this even when the app works. Do not change the binary unless they named a crash. Record on a **physical iPhone**, then paste the six answers from [review-reply.md](review-reply.md) into Resolution Center **and** Notes. Keep the demo studio and API up until they finish.
 
 ## Rejection risks for this app
 
