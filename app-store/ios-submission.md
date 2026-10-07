@@ -12,7 +12,7 @@ Apple reviewers install a fresh copy. They need a login that works without acces
 | Display name | Studio Health |
 | Version | `1.0.0` in `app.json` |
 | Login | Email + 6-digit OTP. Coaches invite clients. Clients cannot self-register. |
-| HealthKit | Reads steps, heart rate, sleep. Does not write. |
+| HealthKit | Not used. The entitlement, purpose strings, and HealthKit / Health Connect packages were removed. |
 | Tablet | `ios.supportsTablet` is `true`, so iPad screenshots are required |
 | Export compliance | `ITSAppUsesNonExemptEncryption` is `false` in `app.json` |
 | Purchases in the app | None. Studio billing is Stripe on the web (multiplatform / reader-style access) |
@@ -27,7 +27,7 @@ Create a dedicated **production** client on a demo studio, then give Apple a **f
 In the live owner dashboard:
 
 1. Create a studio named **Studio Health Demo**.
-2. Turn on every feature you want reviewed: program, health tracking, diet, video library, booking, messaging.
+2. Turn on every feature you want reviewed: program, diet, video library, booking, messaging.
 3. Brand it so screenshots look like a real studio, not empty defaults.
 
 ### Demo client
@@ -35,7 +35,7 @@ In the live owner dashboard:
 1. Invite a client such as `apple-review@yourdomain.com`. Do not use a personal inbox.
 2. Fill the account so every tab has content:
    - A current program with several exercises and demo videos
-   - A few logged sessions on Today / Calendar
+   - A few logged sessions on Today / Calendar, with session feedback on some of them
    - Diet entries if diet is on
    - Library clips on Videos
    - At least one bookable slot
@@ -78,7 +78,7 @@ In App Store Connect → the iOS version → App Review Information:
 | Notes | Paste the template in [listing-copy.md](listing-copy.md#app-review-notes). If they rejected and asked for a video, use [review-reply.md](review-reply.md) instead. |
 | Contact | A phone/email you will answer during review |
 
-Say in the notes that Health data comes from Apple Health if granted, and that the rest of the app works if the reviewer denies Health access.
+Say in the notes that the app does not use HealthKit, and point the reviewer to the session feedback card on Today.
 
 ## 2. Legal pages
 
@@ -132,13 +132,13 @@ Current iPhone set:
 3. Calendar
 4. Messages
 
-Optional extras if those features stay on for review: Health / recovery, Videos, Booking.
+Optional extras if those features stay on for review: session feedback, Videos, Booking.
 
 App Preview video (15–30s, up to 3) is optional.
 
 ### Privacy nutrition labels
 
-Declare what this app and its SDKs collect. Confirm against the live binary and third parties (Supabase, Expo push / updates, HealthKit).
+Declare what this app and its SDKs collect. Confirm against the live binary and third parties (Supabase, Expo push / updates).
 
 Suggested starting point for Studio Health:
 
@@ -147,12 +147,12 @@ Suggested starting point for Studio Health:
 | Email address | Yes | No | App functionality (login) |
 | Name | Yes | No | App functionality |
 | User ID | Yes | No | App functionality |
-| Health (steps, heart rate, sleep via HealthKit) | Yes | No | App functionality; shared with the coach |
-| Fitness / workout logs | Yes | No | App functionality; shared with the coach |
-| Other user content (messages) | Yes | No | App functionality |
+| Fitness / workout logs and session effort (1–10) | Yes | No | App functionality; shared with the coach |
+| Photos (meal photos, if diet is on) | Yes | No | App functionality; shared with the coach |
+| Other user content (messages, session comments, meal notes) | Yes | No | App functionality |
 | Device ID / push token | Yes | No | App functionality (notifications) |
 
-HealthKit purpose strings are already in `app.json`. Do not claim the app diagnoses, treats, or monitors disease.
+There is no HealthKit or Health Connect in the binary, so do not declare Health data. Do not claim the app diagnoses, treats, or monitors disease.
 
 ### Age rating
 
@@ -179,7 +179,7 @@ eas submit --platform ios
 ```
 
 5. Wait for processing (often 10–15 minutes). The build appears in TestFlight.
-6. Install that TestFlight build yourself. Sign in with the demo email and fixed code. Tap every tab. Confirm nothing is empty and Health denial still leaves a usable app.
+6. Install that TestFlight build yourself. Sign in with the demo email and fixed code. Tap every tab. Confirm nothing is empty and the session feedback card sends.
 7. Submit that build for App Review.
 
 Keep the API, Supabase, and demo studio up until Apple replies. A down backend looks like a broken app.
@@ -193,10 +193,9 @@ New developer accounts often get this even when the app works. Do not change the
 1. OTP the reviewer cannot receive (no fixed code / no notes explaining the OTP-as-password flow).
 2. Empty demo studio (guideline 2.1 / 4.2 minimum functionality).
 3. Privacy or terms that still mention SMS / mobile-number login.
-4. HealthKit with no working fallback when permission is denied.
-5. Placeholder support or privacy URLs.
-6. Screenshots from a logged-out or empty account.
-7. Account deletion missing or only offered by email (guideline 5.1.1(v)).
+4. Placeholder support or privacy URLs.
+5. Screenshots from a logged-out or empty account.
+6. Account deletion missing or only offered by email (guideline 5.1.1(v)).
 
 ## After approval
 

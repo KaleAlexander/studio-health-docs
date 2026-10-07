@@ -21,7 +21,7 @@ Physical iPhone, latest iOS, **TestFlight build of the submitted binary**, signe
 3. Type the 6-digit `PASSWORD_OTP` → **Sign in**.
 4. **Home** — branded studio, today’s plan.
 5. **Today → Program** — tick or log one exercise.
-6. **Today → Health** — open the tab. Deny Apple Health if prompted; keep going.
+6. **Today → Program** — scroll to **How hard was this session?**, pick a number, and tap **Send to coach**.
 7. **Today → Diet** — open the tab (meal log for the coach).
 8. **Calendar** — week with logged days.
 9. **Videos** — play a few seconds of a studio clip.
@@ -51,14 +51,14 @@ Thank you. Studio Health is complete and ready for customers. Answers to your si
 
 1. SCREEN RECORDING
 DEMO_VIDEO_URL
-Physical iPhone, latest iOS, submitted TestFlight build. Starts at launch (signed out): email → 6-digit code → Home → Today (log an exercise, Health, Diet) → Calendar → Videos → Booking → coach Messages → Account, including Delete account (cancelled so the demo login remains).
+Physical iPhone, latest iOS, submitted TestFlight build. Starts at launch (signed out): email → 6-digit code → Home → Today (log an exercise, rate the session, Diet) → Calendar → Videos → Booking → coach Messages → Account, including Delete account (cancelled so the demo login remains).
 
 No in-app registration (coaches invite clients on the web). No IAP or paid unlocks in iOS. No public UGC feed, so no public report/block UI (see 6).
 
 2. PURPOSE AND AUDIENCE
 Studio Health is the client app for people who train with a studio already on Studio Health (fitness, pilates, personal training, similar coaching).
 
-Problem: programs, recovery, demos, diet logs, messages, and booking are usually scattered. Value: the coach sets up the studio on the web; the client opens one branded app for today’s program, session logs, optional Apple Health recovery (steps, heart rate, sleep), studio demos, coach messages, and booking.
+Problem: programs, session feedback, demos, diet logs, messages, and booking are usually scattered. Value: the coach sets up the studio on the web; the client opens one branded app for today’s program, session logs, a 1–10 rating of how hard each session felt, studio demos, coach messages, and booking.
 
 Public App Store companion for invited clients — not an employee-only or MDM app. Coaching tool, not a medical device; it does not diagnose or treat any condition.
 
@@ -76,11 +76,11 @@ No email is sent for this reviewer account. Type the code on the second screen.
 1. Launch signed out.
 2. Enter USERNAME_EMAIL → Continue.
 3. Enter PASSWORD_OTP → Sign in.
-4. Home is a seeded demo studio (ChiForm) with program, health, diet, videos, booking, and messages.
+4. Home is a seeded demo studio (ChiForm) with program, diet, videos, booking, and messages.
 
-Then: Home (Account top-right) · Today (Program / Health / Diet) · Calendar · Videos · Book · chat bubble for Messages.
+Then: Home (Account top-right) · Today (Program / Diet) · Calendar · Videos · Book · chat bubble for Messages.
 
-HealthKit is optional (read-only). Deny it; the rest still works.
+The app does not use HealthKit and does not read health data from the device.
 
 Account deletion: Home → Account → Delete account. Please do not delete this demo login unless testing that path; we will restore it.
 
@@ -89,8 +89,7 @@ Account deletion: Home → Account → Delete account. Please do not delete this
 • Studio Health API — login codes, account deletion, notifications
 • Resend — login emails for real clients (this demo uses the fixed code)
 • Stripe — studio subscriptions on the web only; no IAP in this app
-• Google Gemini — program drafts on the web dashboard; iOS only shows saved programs
-• Apple Health / HealthKit — optional steps, heart rate, sleep
+• Google Gemini — program drafts and progress reviews on the web dashboard; iOS only shows saved programs
 • Expo — push notifications
 • YouTube / Vimeo embed players — studio exercise demos
 • Studio booking URL in an in-app browser, when enabled
@@ -99,7 +98,7 @@ Account deletion: Home → Account → Delete account. Please do not delete this
 Same features and content in all regions. English UI. No geo-restricted content.
 
 6. REGULATED INDUSTRY / THIRD-PARTY MATERIAL
-Not a licensed healthcare provider. Health data is coaching context only.
+Not a licensed healthcare provider. The app does not collect health records or device health data. Clients rate session effort and can comment to their coach.
 
 Studios supply programs, messages, and videos and must have rights to that material (https://studiohealth.ai/terms). YouTube/Vimeo play via official embeds. Clients only see content from the studio that invited them. No public media marketplace.
 

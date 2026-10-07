@@ -8,7 +8,7 @@ Paste into App Store Connect. Replace the demo email and OTP before submit. This
 | --- | --- | --- |
 | Name | 30 | Studio Health |
 | Subtitle | 30 | Your studio in your pocket |
-| Promotional text | 170 | Programs, recovery, videos, and booking from your studio — in one app your coach already set up for you. |
+| Promotional text | 170 | Programs, session feedback, videos, and booking from your studio — in one app your coach already set up for you. |
 
 Alternate subtitles if the first is taken:
 
@@ -25,7 +25,7 @@ Your coach invites you. Sign in with the email they used, then a 6-digit code. T
 Once you are in, you can:
 
 • See today’s program and log your session
-• Check steps, heart rate, and sleep when your studio uses Apple Health
+• Tell your coach how hard the session felt
 • Follow your calendar and diet notes
 • Watch exercise demos from your studio’s library
 • Book sessions when your studio turns booking on
@@ -38,7 +38,7 @@ Your studio’s colours and name come through in the app. Studio Health is a coa
 100-character limit, comma-separated, no spaces after commas if you need the room. Do not use competitor names.
 
 ```
-studio,coach,workout,program,recovery,health,fitness,training,client,pilates
+studio,coach,workout,program,feedback,fitness,training,client,pilates,strength
 ```
 
 ## What’s New (1.0)
@@ -79,9 +79,9 @@ This app uses email + a 6-digit code, not a password.
 2. Enter USERNAME_EMAIL and tap Continue.
 3. On the next screen enter PASSWORD_OTP.
 
-You will land on Home for a demo studio with a program, health, diet, videos, and booking already populated.
+You will land on Home for a demo studio with a program, diet, videos, and booking already populated. After ticking an exercise on Today, the client can rate how hard the session felt (1–10) and leave a comment for their coach.
 
-Health data comes from Apple Health if you grant permission. Deny Health access if you prefer; the rest of the app still works.
+The app does not use HealthKit or read any health data from the device.
 
 Clients cannot create accounts in this app. Coaches invite them from the web dashboard at https://studiohealth.ai. There are no in-app purchases. Studio subscriptions are billed on the web.
 
@@ -92,19 +92,21 @@ Replace `USERNAME_EMAIL` and `PASSWORD_OTP` with the same values you put in the 
 
 ## Privacy nutrition (draft)
 
-Confirm these against the live app and SDKs (Supabase, Expo, HealthKit) before saving in Connect.
+Confirm these against the live app and SDKs (Supabase, Expo) before saving in Connect.
 
 **Data collected (linked to the user, not used for tracking):**
 
 - Contact Info → Email Address → App Functionality
 - Contact Info → Name → App Functionality
 - Identifiers → User ID → App Functionality
-- Health & Fitness → Health → App Functionality (HealthKit; shared with the client’s coach)
-- Health & Fitness → Fitness → App Functionality
-- User Content → Other User Content (messages, logs) → App Functionality
+- Health & Fitness → Fitness → App Functionality (workout logs and session effort ratings shared with the coach)
+- User Content → Photos or Videos → App Functionality (meal photos, if diet is on)
+- User Content → Other User Content (messages, session comments, meal notes) → App Functionality
 - Identifiers → Device ID → App Functionality (push)
 
 **Not collected / not used for tracking ads,** unless a future SDK changes that.
+
+The app no longer links HealthKit or Health Connect. Do not tick Health & Fitness → Health. Session comments are free text, so they sit under Other User Content.
 
 ## Age rating questionnaire (expected)
 
@@ -113,5 +115,5 @@ Answer from the live product, not this guess. Likely:
 - No unrestricted web access
 - No gambling
 - No medical claim to treat or diagnose
-- Health and fitness information: yes, coaching / recovery context
+- Health and fitness information: yes, workout programs and session feedback
 - No age-restricted content that would push 17+ unless you add it later

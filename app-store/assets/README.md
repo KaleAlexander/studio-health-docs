@@ -37,7 +37,7 @@ Do not add captions again in Connect — they are already on the images.
 
 2. **iPad Messages.** Home / Today / Calendar are in `UPLOAD-ipad-13/`. Drop a 13" Messages capture into `source/ipad/04-messages.png` and re-run `python3 compose_screenshots.py` if you want the fourth shot.
 
-3. **Optional extra shots** if those features stay on for review: Health / recovery, Videos, Booking.
+3. **Optional extra shots** if those features stay on for review: session feedback, Videos, Booking.
 
 ## Captions on the framed set
 
