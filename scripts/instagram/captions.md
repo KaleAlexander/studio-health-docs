@@ -44,3 +44,13 @@ Your name. Your colours. Turn off anything you don't run.
 From the way you coach, to the session they follow. Everything is built in.
 
 studiohealth.ai
+
+## Pinned carousel
+
+Portrait slides in `carousel/`. Upload **01 through 06** in that order, then pin the post. The cover is the first image.
+
+How it works.
+
+Train it once, on how you coach and the programs you already write. Tell it what they need, and the program takes shape. They only see it after you save. Sets, cues, and a how-to video come back on every exercise, pulled from your library. Brand it as yours, and turn off anything you don't run. They open it, and they just train.
+
+studiohealth.ai
