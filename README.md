@@ -11,4 +11,6 @@ Internal docs for shipping Studio Health. These are not the public privacy or te
 
 ## Scripts
 
-- [Arcads founder script](scripts/arcads-founder.md) — talking-actor script for the explainer
+- [UGC ad](scripts/arcads-founder.md) — face open, then the walkthrough over product
+- [SaaS walkthrough](scripts/arcads-frames.md) — product film over the same six screens
+- [Arcads straight to the sell](scripts/arcads-founder-sell.md) — shorter talking-actor sell
