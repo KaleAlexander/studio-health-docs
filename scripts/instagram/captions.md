@@ -54,3 +54,19 @@ How it works.
 Train it once, on how you coach and the programs you already write. Tell it what they need, and the program takes shape. They only see it after you save. Sets, cues, and a how-to video come back on every exercise, pulled from your library. Brand it as yours, and turn off anything you don't run. They open it, and they just train.
 
 studiohealth.ai
+
+## Story
+
+Four separate ads, 1080×1920, in `stories/`. Same layout, different headline. Put the **Get started for free** sticker near the bottom.
+
+**01 — trained** (`stories/01-trained.png`)
+AI that's trained on your programs. Describe what they need. It drafts in your style. Sets, cues, and the video. They open it and just train.
+
+**02 — build app** (`stories/02-build-app.png`)
+Build your own app. Your name. Your colours. Turn off anything you don't run. They train in your studio.
+
+**03 — sounds like you** (`stories/03-sounds-like-you.png`)
+The next draft sounds like you. Trained on how you coach, and the programs you write. Not a blank page.
+
+**04 — just train** (`stories/04-just-train.png`)
+They open it and just train. Today's work is on their phone. Sets, the cue, the video. Your studio. Their pocket.
