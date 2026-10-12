@@ -70,3 +70,20 @@ The next draft sounds like you. Trained on how you coach, and the programs you w
 
 **04 — just train** (`stories/04-just-train.png`)
 They open it and just train. Today's work is on their phone. Sets, the cue, the video. Your studio. Their pocket.
+
+Follow-ups, same layout. Post after a headline, or on their own.
+
+**05 — calendar** (`stories/05-calendar.png`)
+They log it as they go. Sets, reps, the weight. Saved back to you.
+
+**06 — messages** (`stories/06-messages.png`)
+They message you in the app. Not a group chat that goes quiet. The thread stays here.
+
+**07 — desk, train** (`stories/07-desk-train.png`)
+This is your desk. A short voice. Two or three programs. That's enough to train it.
+
+**08 — desk, draft** (`stories/08-desk-draft.png`)
+Then describe the week. It drafts from your library. You edit the sets. They only see it after you save.
+
+**09 — desk, library** (`stories/09-desk-library.png`)
+Your videos. Already on it. Pulled from the library. They can watch the movement.

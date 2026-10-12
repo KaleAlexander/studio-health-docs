@@ -20,6 +20,7 @@ OUT = ROOT / "stories"
 SHOTS = Path(
     "/Users/kalehanby/Documents/GitHub/studio-health-docs/app-store/assets/screenshots/iphone-6.9"
 )
+DESK = Path("/Users/kalehanby/Documents/GitHub/studio-health-docs/scripts/arcads-frames")
 W, H = 1080, 1920
 
 INK = (22, 20, 18, 255)
@@ -47,6 +48,21 @@ def app_shot(name: str, top: int, width: int, inner_top: int = 0, radius: int = 
         ImageDraw.Draw(mask).rounded_rectangle((0, 0, phone.width - 1, phone.height - 1), radius=radius, fill=255)
         phone.putalpha(mask)
     return phone
+
+
+def desk_shot(name: str, box: tuple[int, int, int, int], width: int, radius: int = 28) -> Image.Image:
+    """A desktop grab, cropped to the useful part and rounded like a sticker."""
+    src = Image.open(DESK / name).convert("RGBA")
+    crop = src.crop(box)
+    im = ig.scale_w(crop, width)
+    mask = Image.new("L", im.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        (0, 0, im.width - 1, im.height - 1),
+        radius=radius,
+        fill=255,
+    )
+    im.putalpha(mask)
+    return im
 
 
 def shadowed(im: Image.Image, angle: float) -> Image.Image:
@@ -120,6 +136,7 @@ def frame(
     phone_w=500,
     inner_top=0,
     radius=0,
+    grab=None,
 ):
     im = solid(ig.FOREST)
     paste(
@@ -132,9 +149,10 @@ def frame(
         sticker(body, ig.sans(38, 640), WHITE, (24, 22, 20, 235), body_angle),
         body_at,
     )
+    picture = grab if grab is not None else app_shot(shot, 470, phone_w, inner_top, radius)
     paste(
         im,
-        shadowed(app_shot(shot, 470, phone_w, inner_top, radius), phone_angle),
+        shadowed(picture, phone_angle),
         phone_at,
     )
     if aside:
@@ -220,14 +238,110 @@ def main():
                 body_angle=-1.8,
             ),
         ),
+        (
+            "05-calendar.png",
+            frame(
+                ["they log it", "as they go."],
+                [
+                    "sets, reps, the weight.",
+                    "saved back to you.",
+                    "the week, in the app.",
+                ],
+                None,
+                "03-calendar.png",
+                (520, 1020),
+                -6,
+                body_at=(64, 500),
+                hook_angle=-2.8,
+                body_angle=1.6,
+            ),
+        ),
+        (
+            "06-messages.png",
+            frame(
+                ["they message you", "in the app."],
+                [
+                    "not a group chat",
+                    "that goes quiet.",
+                    "the thread stays here.",
+                ],
+                None,
+                "04-messages.png",
+                (500, 1000),
+                5,
+                body_at=(72, 500),
+                hook_angle=2.2,
+                body_angle=-1.4,
+            ),
+        ),
+        (
+            "07-desk-train.png",
+            frame(
+                ["this is your desk."],
+                [
+                    "a short voice.",
+                    "two or three programs.",
+                    "that's enough to train it.",
+                ],
+                None,
+                "",
+                (-20, 980),
+                -2.4,
+                body_at=(64, 460),
+                hook_angle=1.8,
+                body_angle=-1.2,
+                grab=desk_shot("01-train-ai.png", (0, 0, 1600, 860), 980),
+            ),
+        ),
+        (
+            "08-desk-draft.png",
+            frame(
+                ["then describe", "the week."],
+                [
+                    "it drafts from your library.",
+                    "you edit the sets.",
+                    "they only see it after you save.",
+                ],
+                None,
+                "",
+                (40, 1040),
+                2.2,
+                body_at=(56, 520),
+                hook_angle=-2.6,
+                body_angle=1.4,
+                grab=desk_shot("02-program-draft.png", (260, 200, 1480, 980), 940),
+            ),
+        ),
+        (
+            "09-desk-library.png",
+            frame(
+                ["your videos.", "already on it."],
+                [
+                    "pulled from the library.",
+                    "they can watch the movement.",
+                ],
+                None,
+                "",
+                (-30, 920),
+                -1.8,
+                body_at=(64, 520),
+                hook_angle=2.4,
+                body_angle=-1.5,
+                grab=desk_shot("04-video-library.png", (250, 0, 1600, 920), 1000),
+            ),
+        ),
     ]
-    cell_w = 240
+    cell_w = 200
     cell_h = round(cell_w * H / W)
-    gap = 16
-    pad = 24
+    gap = 14
+    pad = 20
+    rows = [slides[:4], slides[4:]]
     board = Image.new(
         "RGB",
-        (pad * 2 + len(slides) * cell_w + (len(slides) - 1) * gap, cell_h + pad * 2),
+        (
+            pad * 2 + max(len(row) for row in rows) * cell_w + 4 * gap,
+            pad * 2 + len(rows) * cell_h + gap,
+        ),
         (255, 255, 255),
     )
     for i, (name, im) in enumerate(slides):
@@ -235,7 +349,9 @@ def main():
         ig.finish(im).save(path, "PNG", optimize=True)
         print(path)
         tile = im.convert("RGB").resize((cell_w, cell_h), Image.Resampling.LANCZOS)
-        board.paste(tile, (pad + i * (cell_w + gap), pad))
+        row = 0 if i < 4 else 1
+        col = i if i < 4 else i - 4
+        board.paste(tile, (pad + col * (cell_w + gap), pad + row * (cell_h + gap)))
     for old_name in ("01-sunday.png", "02-open-it.png", "02-their-app.png"):
         old = OUT / old_name
         if old.exists():
