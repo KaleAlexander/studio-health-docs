@@ -50,6 +50,22 @@ def app_shot(name: str, top: int, width: int, inner_top: int = 0, radius: int = 
     return phone
 
 
+def client_program(width: int = 520) -> Image.Image:
+    """The live client program on the right of the draft screen."""
+    src = Image.open(DESK / "02-program-draft.png").convert("RGBA")
+    crop = src.crop((1172, 488, 1478, 1000))
+    im = ig.scale_w(crop, width)
+    radius = round(width * 0.11)
+    mask = Image.new("L", im.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle(
+        (0, 0, im.width - 1, im.height - 1),
+        radius=radius,
+        fill=255,
+    )
+    im.putalpha(mask)
+    return im
+
+
 def desk_shot(name: str, box: tuple[int, int, int, int], width: int, radius: int = 28) -> Image.Image:
     """A desktop grab, cropped to the useful part and rounded like a sticker."""
     src = Image.open(DESK / name).convert("RGBA")
@@ -161,6 +177,56 @@ def frame(
             sticker(aside, ig.sans(32, 680), PAPER, ACCENT, -7),
             aside_at,
         )
+    return im
+
+
+def straight():
+    """One story: the path, then the line, then the client program."""
+    im = solid(ig.FOREST)
+    paste(
+        im,
+        sticker(
+            ["for studio owners", "and PTs"],
+            ig.sans(30, 680),
+            PAPER,
+            ACCENT,
+            5.5,
+        ),
+        (620, 248),
+    )
+    steps = [
+        (["this is your desk."], 58, -2.2, (44, 230)),
+        (["build your app."], 50, 1.4, (72, 360)),
+        (["ai that's trained", "on your program."], 44, -1.1, (96, 490)),
+        (["straight to their phone."], 38, 2.0, (64, 720)),
+    ]
+    for lines, size, angle, xy in steps:
+        paste(im, sticker(lines, ig.sans(size, 720), INK, PAPER, angle), xy)
+    paste(
+        im,
+        sticker(
+            [
+                "build and deploy programs",
+                "to your client's app",
+                "in seconds.",
+            ],
+            ig.sans(32, 640),
+            WHITE,
+            (24, 22, 20, 235),
+            -1.4,
+        ),
+        (56, 840),
+    )
+    paste(
+        im,
+        sticker(["try for free"], ig.sans(34, 700), PAPER, ACCENT, -6.5),
+        (48, 1088),
+    )
+    paste(
+        im,
+        shadowed(desk_shot("02-program-draft.png", (260, 200, 1480, 980), 1000), 2.2),
+        (-16, 1180),
+    )
     return im
 
 
@@ -330,16 +396,18 @@ def main():
                 grab=desk_shot("04-video-library.png", (250, 0, 1600, 920), 1000),
             ),
         ),
+        ("10-straight.png", straight()),
     ]
     cell_w = 200
     cell_h = round(cell_w * H / W)
     gap = 14
     pad = 20
     rows = [slides[:4], slides[4:]]
+    cols = max(len(row) for row in rows)
     board = Image.new(
         "RGB",
         (
-            pad * 2 + max(len(row) for row in rows) * cell_w + 4 * gap,
+            pad * 2 + cols * cell_w + (cols - 1) * gap,
             pad * 2 + len(rows) * cell_h + gap,
         ),
         (255, 255, 255),

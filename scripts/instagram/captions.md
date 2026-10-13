@@ -87,3 +87,6 @@ Then describe the week. It drafts from your library. You edit the sets. They onl
 
 **09 — desk, library** (`stories/09-desk-library.png`)
 Your videos. Already on it. Pulled from the library. They can watch the movement.
+
+**10 — straight** (`stories/10-straight.png`)
+For studio owners and PTs. This is your desk. Build your app. AI that's trained on your program. Straight to their phone. Build and deploy programs to your client's app in seconds. Try for free.
