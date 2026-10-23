@@ -90,3 +90,34 @@ Your videos. Already on it. Pulled from the library. They can watch the movement
 
 **10 — straight** (`stories/10-straight.png`)
 For studio owners and PTs. This is your desk. Build your app. AI that's trained on your program. Straight to their phone. Build and deploy programs to your client's app in seconds. Try for free.
+
+## Organic Reels & Video Content
+
+### 01 — Organic Reel: "The Sunday Night Program Trap" (`posts/organic_reel_01.mp4`)
+
+- **Format:** 9:16 Vertical Video Reel (1080×1920)
+- **Target Audience:** Boutique fitness studio owners, Reformer/Pilates instructors, strength & conditioning coaches, personal trainers.
+- **Hook (Visual & Text 0.0s – 3.5s):** On-screen top card: *"STUDIO OWNER TIP: I stopped spending 6 hours every Sunday writing workouts. Here is how to do it in 60 seconds 👇"*
+- **Footage:** AI-generated footage of a studio owner at a clean oak desk reviewing a dark-mode workout app on mobile.
+- **Burned-In Animated Subtitles:**
+  - `0.0s – 2.4s`: *"Stop wasting Sunday nights on workout programs."*
+  - `2.4s – 5.2s`: *"Train your AI once on your coaching style & videos."*
+  - `5.2s – 8.0s`: *"Draft custom 4-week plans in 60s on Studio Health."*
+- **Recommended Trending Audio:** Clean lofi beats or subtle ambient electronic (e.g., "Lofi Chill Beats" or voiceover).
+- **Caption to Copy & Paste:**
+Sunday night 9:00 PM: 15 client programs left to write in Google Sheets... 😅
+
+If you run a studio or coach 1:1, you shouldn't be spending half your weekend typing out reps, sets, and video links.
+
+With @studiohealth.ai:
+1️⃣ Train the AI once on your coaching style & video library
+2️⃣ Describe what your client needs ("40yo knee rehab, 3x/week")
+3️⃣ Get a custom 4-week program draft with your demo videos attached in 60 seconds
+4️⃣ Send it straight to their own branded app on iOS & Android
+
+Save hours every weekend and give your clients a 5-star experience.
+
+🔗 Try free for 7 days at studiohealth.ai (link in bio)
+
+#studioowner #fitnessbusiness #pilatesinstructor #personaltrainer #functionalcoaching #studiohealth #gymsoftware #coachingapp
+
